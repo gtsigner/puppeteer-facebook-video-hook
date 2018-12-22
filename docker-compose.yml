@@ -1,0 +1,6 @@
+version: '3.0'
+services:
+  mongo-db:
+  spider:
+  backend:
+  frontend:
