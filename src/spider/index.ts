@@ -13,7 +13,7 @@ const s_facebook_password = 'Comedown01';
 
 //https://www.facebook.com/scshop.tw/videos/429639404221650/
 // const liveUrl = 'https://www.facebook.com/scshop.tw/videos/966054916929715/';
-const liveUrl = 'https://www.facebook.com/michelledbev/videos/2371969676206729/';
+const liveUrl = 'https://www.facebook.com/scshop.tw/videos/429639404221650/';
 
 import models from '../models'
 import { Md5 } from '../lib/md5';

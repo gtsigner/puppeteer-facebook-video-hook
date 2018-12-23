@@ -10,7 +10,7 @@ export enum ConsoleTypes {
 export async function bindConsole(page, callback) {
     page.on('console', msg => {
         if (msg._type === ConsoleTypes.error) {
-            console.log(msg._text);
+            console.error(msg._text);
         }
         //Debug 调试信息
         if (msg._type == ConsoleTypes.debug) {

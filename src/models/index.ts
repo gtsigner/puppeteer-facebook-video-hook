@@ -15,3 +15,4 @@ export default {
     FbComments: FbComments,
     FbTask: FbTask
 }
+export const connection = db;

@@ -1,15 +1,18 @@
 {
-  "name": "PuppeteerFacebook",
+  "name": "Puppeteer Facebook",
   "version": "1.0.0",
   "description": "",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node -- ./src/app.js",
-    "spider": "nodemon --ignore build/ --exec yarn spider:run",
-    "spider:run": "yarn spider:build && yarn spider:start",
-    "spider:build": "rm -rf ./build/* && tsc",
-    "spider:start": "node build/spider/index.js",
+    "api": "nodemon --watch src/**/*.ts --exec yarn api:run",
+    "api:run": "yarn clean && yarn build && node build/app.js",
+    "api:dev": "nodemon --watch src/**/*.ts --exec ts-node ./src/app.ts",
+    "spider": "nodemon --watch src/ --exec yarn spider:run",
+    "spider:dev": "nodemon --watch src/ --exec ts-node ./src/spider/index.ts",
+    "spider:run": "yarn clean && yarn build && node build/spider/index.js",
+    "clean": "rm -rf ./build/*",
     "build": "tsc"
   },
   "keywords": [],
@@ -21,16 +24,22 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "bluebird": "^3.5.2",
-    "body-parser": "^1.18.3",
     "consola": "^2.3.0",
     "dayjs": "^1.7.8",
-    "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0",
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.6",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^7.4.0",
     "mongoose": "^5.4.0",
     "nodemon": "^1.18.4",
     "puppeteer": "^1.4.0",
     "typescript": "^3.2.2",
     "validator": "^10.8.0",
     "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "ts-node": "^7.0.1"
   }
 }
