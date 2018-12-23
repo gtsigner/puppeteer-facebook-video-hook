@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "./build",
+        "allowJs": false,
+        "target": "es5",
+        "lib": [
+            "es5",
+            "dom",
+            "es2015"
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

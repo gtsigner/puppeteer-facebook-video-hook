@@ -5,23 +5,32 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node -- app.js",
-    "spider": "nodemon --exec babel-node -- index.js"
+    "start": "nodemon --exec babel-node -- ./src/app.js",
+    "spider": "nodemon --ignore build/ --exec yarn spider:run",
+    "spider:run": "yarn spider:build && yarn spider:start",
+    "spider:build": "rm -rf ./build/* && tsc",
+    "spider:start": "node build/spider/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/puppeteer": "^1.11.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
+    "consola": "^2.3.0",
+    "dayjs": "^1.7.8",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.4.0",
     "nodemon": "^1.18.4",
     "puppeteer": "^1.4.0",
     "typescript": "^3.2.2",
-    "validator": "^10.8.0"
+    "validator": "^10.8.0",
+    "winston": "^3.1.0"
   }
 }
