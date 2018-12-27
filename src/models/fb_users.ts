@@ -2,8 +2,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const _schema = new Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     username: String,
     avatar: String,
+    uri: String,
+    is_friend: Boolean,
+    type: String,
     profileUrl: String,
     createAt: Date,
     updateAt: Date,

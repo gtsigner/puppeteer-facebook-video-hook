@@ -31,3 +31,11 @@ https://www.facebook.com/scshop.tw/videos/567889097048999/
 -  [ ] 支持多worker工作，提高采集效率
 -  [ ] 支持提交liveUrl，在回放过程中，循环采集完所有历史的所有评论
 -  [ ] worker管控功能和代理功能
+
+
+
+
+## 遇到的问题
+-   [x] facebook 在拦截掉request修改postData后，发现后端不反数据，说明可能前端参数有签名，发现__dyn是动态参数，但是传入空值后就可以正常访问
+-   [x] facebook的json数据包含了一个```for (;;);```的字符串需要去除掉
+-   [x] facebook中每页最多能拿到50条数据，多了直接会报错不给数据

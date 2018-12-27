@@ -8,7 +8,7 @@ const _schema = new Schema({
     },
     hashId: {
         type: String,
-        unique: true,
+        //unique: true,
         required: true,
         default: '',
     },
